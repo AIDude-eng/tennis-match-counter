@@ -1,0 +1,54 @@
+﻿<Page x:Class="TennisCounter.MatchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TennisCounter"
+      xmlns:tenniscounterlibrary="clr-namespace:TennisCounterLibrary;assembly=TennisCounterLibrary" d:DataContext="{d:DesignInstance Type=tenniscounterlibrary:Player}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MatchPage">
+
+    <Grid Background="#fefae0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="ModeName" FontWeight="Bold" Grid.ColumnSpan="5" VerticalAlignment="center" HorizontalAlignment="center" FontSize="30"></Label>
+        <Label Name="HasServe1" FontWeight="Bold" Grid.Row="1" Grid.Column="1" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20" Content="{Binding Path=Serve1, Mode=OneWay}"></Label>
+        <Label Name="HasServe2" FontWeight="Bold" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="20" Content="{Binding Path=Serve2, Mode=OneWay}"></Label>
+        <Label Name="Player1" Foreground="black" Content="Player 1" Grid.Row="2" Grid.Column="1" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20"></Label>
+        <Label Name="Player2" Content="Player 2" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="20"></Label>
+        <Label Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="center" FontSize="40">:</Label>
+        <Button Content="Add Point" Grid.Row="2" BorderThickness="2" Background="#d4a373" FontSize="20" Margin="15" Name="PointP1Button" Click="PointP1Button_Click">
+            
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Grid.Row="2" BorderThickness="2" Background="#d4a373" Grid.Column="4" FontSize="20" Margin="15" Name="PointP2Button" Click="PointP2Button_Click">
+            Add Point
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Label Name="P1Score" Grid.Row="3" Grid.Column="1" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20" Content="{Binding Path=Score1, Mode=OneWay}"></Label>
+        <Label Name="P2Score" Grid.Row="3" Grid.Column="3" VerticalAlignment="center" HorizontalAlignment="center" FontSize="20" Content="{Binding Path=Score2, Mode=OneWay}"></Label>
+    </Grid>
+</Page>
