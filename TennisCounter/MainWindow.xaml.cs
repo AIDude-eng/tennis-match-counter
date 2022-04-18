@@ -55,7 +55,7 @@ namespace TennisCounter
             string Player1Name2 = Player2NameInput.Text;
             MatchModel.Player2 = new Player(Player1Name2);
             MatchModel.Player2.HasServe = false;
-            Main.NavigationService.Navigate(new MatchPage(MatchModel));
+            Main.NavigationService.Navigate(new MatchPage(MatchModel, this));
         }
 
         private void Select_Mode_Button(object sender, RoutedEventArgs e)

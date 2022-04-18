@@ -50,9 +50,12 @@ namespace TennisCounter
                 return Matchmodel.Player2.HasServe ? "Serving" : "";
             }
         }
+        private MainWindow main;
 
-        public MatchPage(SuperMatchModel Matchmodel)
+        public MatchPage(SuperMatchModel Matchmodel, MainWindow main)
         {
+            this.main = main;
+            main.Main.Visibility = Visibility.Visible;
             InitializeComponent();
             DataContext = this;
             this.Matchmodel = Matchmodel;
@@ -79,6 +82,10 @@ namespace TennisCounter
             // Define who starts serving
             OnPropertyChanged("Serve1");
             OnPropertyChanged("Serve2");
+
+            // Instantiate Match Clock
+            Matchmodel.MatchClock = new MatchClock(Clock);
+            Matchmodel.MatchClock.Start();
         }
 
         private void PointP1Button_Click(object sender, RoutedEventArgs e)
@@ -117,5 +124,36 @@ namespace TennisCounter
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            Matchmodel.ResetScores();
+            // Update UI
+            UpdateUIBindings();
+        }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+            main.Main.Visibility = Visibility.Hidden;
+        }
+
+        private void StopClockButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Matchmodel.MatchClock.isStopped)
+            {
+                Matchmodel.MatchClock.Start();
+                StopClockButton.Content = "Stop Clock";
+            } else
+            {
+                Matchmodel.MatchClock.Stop();
+                StopClockButton.Content = "Start Clock";
+            }
+        }
+
+        private void ResetClockButton_Click(object sender, RoutedEventArgs e)
+        {
+            Matchmodel.MatchClock.Stop();
+            StopClockButton.Content = "Start Clock";
+            Matchmodel.MatchClock.Reset();
+        }
     }
 }

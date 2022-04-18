@@ -11,7 +11,7 @@ namespace TennisCounterLibrary
     public abstract class SuperMatchModel
     {
         abstract public string ModeName { get; }
-        public DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        public MatchClock MatchClock;
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
         public MatchStats stats { get; set; }
