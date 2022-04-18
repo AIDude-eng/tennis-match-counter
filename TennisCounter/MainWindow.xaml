@@ -6,8 +6,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TennisCounter"
         mc:Ignorable="d"
-        Title="Tennis Counter" Height="450" Width="800">
-    <Grid Background="#fefae0">
+        Title="Tennis Counter" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Background="#181735">
+       
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -20,28 +23,70 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Label VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="0" Grid.ColumnSpan="3" FontSize="30">Tennis Counter Application</Label>
-        <Label VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="1" FontSize="20">Player1</Label>
-        <Label Name="MatchModeLabel" VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="1" Grid.Column="1" FontSize="20"></Label>
-        <Label VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="1" Grid.Column="2" FontSize="20">Player2</Label>
-        <TextBox Name="Player1NameInput" VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="2" FontSize="20" Width="100"></TextBox>
-        <TextBox Name="Player2NameInput" VerticalAlignment="center" HorizontalAlignment="center" Grid.Row="2" Grid.Column="2" FontSize="20" Width="100"></TextBox>
-        <Button VerticalAlignment="center" Padding="5" BorderThickness="2" Background="#d4a373" HorizontalAlignment="center" Grid.Row="2" Grid.Column="1" FontSize="20" Click="Select_Mode_Button">
-            Switch Match Mode
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="8"/>
+        <Grid Background="#0F0F2D" Grid.ColumnSpan="3" Height="70" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="0" Grid.ColumnSpan="3" FontSize="35">Tennis Counter Application</Label>
+        </Grid>
+        <Label VerticalAlignment="center" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="1" FontSize="30">Player1</Label>
+        <Label Name="MatchModeLabel" VerticalAlignment="Bottom" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="1" Grid.Column="1" FontSize="20"></Label>
+        <Label VerticalAlignment="center" HorizontalAlignment="center" FontFamily="Fonts/#Dosis" Foreground="white" Grid.Row="1" Grid.Column="2" FontSize="30">Player2</Label>
+        <TextBox Name="Player1NameInput" VerticalAlignment="center" FontFamily="Fonts/#Dosis" FontWeight="Medium" HorizontalAlignment="center" Grid.Row="2" FontSize="25" Width="150"></TextBox>
+        <TextBox Name="Player2NameInput" VerticalAlignment="center" FontFamily="Fonts/#Dosis" FontWeight="Medium"  HorizontalAlignment="center" Grid.Row="2" Grid.Column="2" FontSize="25" Width="150"></TextBox>
+        
+        <Button Content="Switch Match Mode" Foreground="White" FontWeight="Medium" Grid.Row="2" Grid.Column="1" FontSize="20" Click="Select_Mode_Button">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                    <Setter Property="Background" Value="#39385D"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#3A3952"/>
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
-            </Button.Resources>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="180" Height="38"
+                            CornerRadius="15"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
-        <Button VerticalAlignment="center" Padding="10" BorderThickness="2" Background="#d4a373" HorizontalAlignment="center" Grid.Row="3" Grid.Column="1" FontSize="20" Click="StartMatchButton">
-            Start Match
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="8"/>
+
+        <Button Content="Start Match" Foreground="White" FontWeight="Medium" Grid.Row="3" Grid.Column="1" FontSize="20" Click="StartMatchButton">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF4C70"/>
+                        </Trigger>
+                    </Style.Triggers>
                 </Style>
-            </Button.Resources>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="130" Height="38"
+                            CornerRadius="15"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
+
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.ColumnSpan="3" Grid.RowSpan="4"/>
         
     </Grid>
