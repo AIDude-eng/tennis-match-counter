@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Timers;
 using System.Diagnostics;
 using System.Windows.Controls;
@@ -13,9 +8,9 @@ namespace TennisCounterLibrary
     public class MatchClock
     {
         private const string _startingTime = "00:00:00";
-        private Timer _timer;
-        private Stopwatch _stopwatch;
-        private Label clockText;
+        private readonly Timer _timer;
+        private readonly Stopwatch _stopwatch;
+        private readonly Label clockText;
         public bool isStopped = false;
 
         public MatchClock(Label clockText)

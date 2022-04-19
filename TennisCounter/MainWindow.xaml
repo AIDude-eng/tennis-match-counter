@@ -4,7 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TennisCounter"
         mc:Ignorable="d"
         Title="Tennis Counter" Height="450" Width="800"
         ResizeMode="NoResize"
@@ -29,7 +28,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label VerticalAlignment="Center" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="0" Grid.ColumnSpan="3" FontSize="35">Tennis Counter Application</Label>
+            <Label VerticalAlignment="Center" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="0" Grid.ColumnSpan="3" FontSize="35">Tennis Counter</Label>
         </Grid>
         <Label VerticalAlignment="center" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="1" FontSize="30">Player1</Label>
         <Label Name="MatchModeLabel" VerticalAlignment="Bottom" HorizontalAlignment="center" FontWeight="Medium" Foreground="white" FontFamily="Fonts/#Dosis" Grid.Row="1" Grid.Column="1" FontSize="20"></Label>

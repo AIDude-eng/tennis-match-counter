@@ -49,7 +49,6 @@
     <Compile Include="MatchClock.cs" />
     <Compile Include="SuperMatchModel.cs" />
     <Compile Include="MatchModesIndexer.cs" />
-    <Compile Include="MatchStats.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

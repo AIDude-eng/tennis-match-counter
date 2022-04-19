@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using TennisCounterLibrary;
 
@@ -16,8 +12,7 @@ namespace TennisCounter
             string caption = String.Format("{0} has won", name);
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Asterisk;
-            MessageBoxResult result;
-            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            _ = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
         }
 
         public static void ShowWinnerSet(string name)
@@ -26,8 +21,7 @@ namespace TennisCounter
             string caption = String.Format("{0} has won the set", name);
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Asterisk;
-            MessageBoxResult result;
-            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            _ = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
         }
 
         public static void ShowSideChange()
@@ -36,11 +30,10 @@ namespace TennisCounter
             string caption = String.Format("Change Sides");
             MessageBoxButton button = MessageBoxButton.OK;
             MessageBoxImage icon = MessageBoxImage.Exclamation;
-            MessageBoxResult result;
-            result = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
+            _ = MessageBox.Show(messageBoxText, caption, button, icon, MessageBoxResult.Yes);
         }
 
-        public static void checkChanges(SuperMatchModel Matchmodel)
+        public static void CheckChanges(SuperMatchModel Matchmodel)
         {
             // Check for side change
             if (Matchmodel.IsChangeSides())
@@ -78,8 +71,8 @@ namespace TennisCounter
             // Check for serve change
             if (Matchmodel.IsChangeServe())
             {
-                Matchmodel.Player1.HasServe = Matchmodel.Player1.HasServe ? false : true;
-                Matchmodel.Player2.HasServe = Matchmodel.Player2.HasServe ? false : true;
+                Matchmodel.Player1.HasServe = !Matchmodel.Player1.HasServe;
+                Matchmodel.Player2.HasServe = !Matchmodel.Player2.HasServe;
 
             }
         }

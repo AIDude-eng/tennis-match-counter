@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Threading.Tasks;
-using System.Windows.Threading;
 
 namespace TennisCounterLibrary
 {
@@ -14,7 +8,6 @@ namespace TennisCounterLibrary
         public MatchClock MatchClock;
         public Player Player1 { get; set; }
         public Player Player2 { get; set; }
-        public MatchStats stats { get; set; }
 
         public abstract void UpdateScore(bool p1Scored);
 

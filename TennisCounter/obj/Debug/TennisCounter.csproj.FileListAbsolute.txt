@@ -6,7 +6,6 @@ C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\Tennis
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\MainWindow.g.cs
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\App.g.cs
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\TennisCounter_MarkupCompile.cache
-C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\TennisCounter_MarkupCompile.lref
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\MainWindow.baml
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\TennisCounter.g.resources
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounter\obj\Debug\TennisCounter.Properties.Resources.resources

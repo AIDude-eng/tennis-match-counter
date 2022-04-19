@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TennisCounterLibrary;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Diagnostics;
 
 namespace TennisCounter
 {
@@ -50,7 +36,7 @@ namespace TennisCounter
                 return Matchmodel.Player2.HasServe ? "Serving" : "";
             }
         }
-        private MainWindow main;
+        private readonly MainWindow main;
 
         public MatchPage(SuperMatchModel Matchmodel, MainWindow main)
         {
@@ -93,7 +79,7 @@ namespace TennisCounter
             // Increase score
             Matchmodel.UpdateScore(true);
             OnPropertyChanged("Score1");
-            TennisUtils.checkChanges(Matchmodel);
+            TennisUtils.CheckChanges(Matchmodel);
 
             // Update UI
             UpdateUIBindings();
@@ -104,7 +90,7 @@ namespace TennisCounter
             // Increase Score
             Matchmodel.UpdateScore(false);
             OnPropertyChanged("Score2");
-            TennisUtils.checkChanges(Matchmodel);
+            TennisUtils.CheckChanges(Matchmodel);
 
             // Update UI
             UpdateUIBindings();

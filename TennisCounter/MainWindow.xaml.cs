@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TennisCounterLibrary;
 using System.Diagnostics;
 
@@ -22,7 +9,7 @@ namespace TennisCounter
     /// </summary>
     public partial class MainWindow : Window
     {
-        MatchModesIndexer modes = new MatchModesIndexer();
+        readonly MatchModesIndexer modes = new MatchModesIndexer();
         int curridx = 0;
         MatchModesIndexer.MatchModes CurrentMatchMode { get; set; }
 
@@ -50,11 +37,9 @@ namespace TennisCounter
                 MatchModel = new ChampTieBreak();
             }
             string Player1Name1 = Player1NameInput.Text;
-            MatchModel.Player1 = new Player(Player1Name1);
-            MatchModel.Player1.HasServe = true;
+            MatchModel.Player1 = new Player(Player1Name1) { HasServe = true };
             string Player1Name2 = Player2NameInput.Text;
-            MatchModel.Player2 = new Player(Player1Name2);
-            MatchModel.Player2.HasServe = false;
+            MatchModel.Player2 = new Player(Player1Name2) { HasServe = false };
             Main.NavigationService.Navigate(new MatchPage(MatchModel, this));
         }
 
