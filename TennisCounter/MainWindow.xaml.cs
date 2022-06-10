@@ -52,7 +52,6 @@ namespace TennisCounter
             }
             CurrentMatchMode = modes[curridx];
             MatchModeLabel.Content = modes.MatchModeTitles[curridx];
-            Trace.WriteLine(modes[curridx] == MatchModesIndexer.MatchModes.ChampTieBreak);
         }
     }
 }

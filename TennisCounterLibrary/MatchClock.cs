@@ -2,6 +2,7 @@
 using System.Timers;
 using System.Diagnostics;
 using System.Windows.Controls;
+using System;
 
 namespace TennisCounterLibrary
 {
@@ -24,7 +25,13 @@ namespace TennisCounterLibrary
 
         private void OnTimerElapsed(object sender, ElapsedEventArgs e)
         {
-            Application.Current.Dispatcher.Invoke(() => clockText.Content = _stopwatch.Elapsed.ToString(@"hh\:mm\:ss"));
+            try
+            {
+                Application.Current.Dispatcher.Invoke(() => clockText.Content = _stopwatch.Elapsed.ToString(@"hh\:mm\:ss"));
+            } catch
+            {
+                // If Application is closed, could be null then just do nothing
+            }
         }
 
         public void Start()
