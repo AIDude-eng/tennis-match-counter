@@ -4,3 +4,9 @@ C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounterLibrary\obj\Debug
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.csproj.CoreCompileInputs.cache
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.dll
 C:\Users\flori\Documents\C# Projects\MatchCounter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.pdb
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\bin\Debug\TennisCounterLibrary.dll
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\bin\Debug\TennisCounterLibrary.pdb
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.csproj.AssemblyReference.cache
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.csproj.CoreCompileInputs.cache
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.dll
+C:\Users\flori\Documents\C# Projects\tennis-match-counter\TennisCounterLibrary\obj\Debug\TennisCounterLibrary.pdb
